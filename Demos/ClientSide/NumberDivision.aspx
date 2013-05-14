@@ -5,7 +5,8 @@
 <div id="division">
 <h3>Number Division</h3>
 <h3>Please input a number between 2 & 10</h3>
-     var number = prompt("Please enter a number between 2 and 10:", "");
+<script>     
+var number = prompt("Please enter a number between 2 and 10:", "");
 
     var entered = parseInt(number);
     var str = 'Your input number is ';
@@ -19,6 +20,6 @@
         alert('<h2>Your input is ' + entered + '. The valid input is between 2 and 10.  Please reload the page and try again.</h2>');
     }
     else document.writeln(str + entered + "<br />");
-
+</script>
 </div>
 </asp:Content>
