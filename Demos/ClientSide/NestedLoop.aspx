@@ -1,21 +1,22 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master1.Master" AutoEventWireup="true" CodeBehind="NestedLoop.aspx.cs" Inherits="FinalProject2.Demos.ClientSide.NestedLoop" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Master1.Master" AutoEventWireup="true" CodeBehind="NestedLoop.aspx.cs" Inherits="FinalProject2.Demos.ClientSide.NestedLoop" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Nested Loop</h2>
     <h2>Please input a number between 2 & 10</h2>
-    <asp:TextBox ID="InputBox" runat="server"></asp:TextBox>
-    <br />
-    <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="InputBox" 
-       ErrorMessage="The input is not a valid integer"  Type="Integer" Display="Dynamic">
-    </asp:CustomValidator>&nbsp;
-  
+<script>
+        var number = prompt("Please enter a number between 2 and 10:", "");
+        var star = "<div>"
+        var lineNumber = number
+        for (var line = 0; line < lineNumber; line++) {
+            for (var j = lineNumber - line; j > 0; j--) {
+                star += "*"
+            }
 
-    <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="InputBox" 
-        ErrorMessage="RangeValidator" MaximumValue="10" MinimumValue="2" Type="Integer" Display="Dynamic">
-    </asp:RangeValidator>
-    <br />
-    <asp:Button ID="Button1" runat="server" OnClientClick="StarPrint()" Text="Print Stars" />
-    <br />
-    <asp:Label ID="StarDisplay" runat="server"></asp:Label>
+            star += "<br>"
+        }
+        document.writeln(star + "</div>")
+
+    </script>
+
 </asp:Content>
